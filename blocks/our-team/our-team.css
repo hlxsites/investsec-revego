@@ -30,7 +30,7 @@ li .inactive {
 .team .members {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 0px;
+    column-gap: 0;
 }
 
 .our-team .members .member {
@@ -52,17 +52,18 @@ li .inactive {
 
 .content.active {
     display: block;
-    animation: fadeIn 1s;
+    animation: fade-in 1s;
 }
 
 
-@keyframes fadeIn {
+@keyframes fade-in {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
-     }
+    }
 }
 
 .member .description {
