@@ -65,28 +65,41 @@ export default async function decorate(block) {
     for (const member of data.members.data) {
         const memberElement = document.createElement('div');
         memberElement.classList.add('member');
+        memberElement.style.backgroundImage = `url(${member.picture})`;
+
+        memberElement.addEventListener('mouseover', (event) => {
+            event.currentTarget.querySelector('.content').classList.add('active');
+        })
+        memberElement.addEventListener('mouseout', (event) => {
+            event.currentTarget.querySelector('.content').classList.remove('active');
+        })
+
+        const memberContent = document.createElement('div');
+        memberContent.classList.add('content');
+        memberElement.append(memberContent);
 
         const memberName = document.createElement('div');
         memberName.textContent = member.name;
-        memberElement.append(memberName);
+        memberContent.append(memberName);
 
         if (member.title) {
             const memberTitle = document.createElement('div');
             memberTitle.textContent = member.title;
-            memberElement.append(memberTitle);
+            memberContent.append(memberTitle);
         }
 
         if (member.description) {
             const memberDescription = document.createElement('div');
+            memberDescription.classList.add('description');
             memberDescription.textContent = member.description;
-            memberElement.append(memberDescription);
+            memberContent.append(memberDescription);
         }
 
         if (member.linkedin) {
             const memberLinkedIn = document.createElement('a');
             memberLinkedIn.href = member.linkedin;
             memberLinkedIn.textContent = 'LinkedIn';
-            memberElement.append(memberLinkedIn);
+            memberContent.append(memberLinkedIn);
         }
 
         teams[member.team].append(memberElement);

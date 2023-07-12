@@ -28,11 +28,43 @@ li .inactive {
 }
 
 .team .members {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 0px;
 }
 
 .our-team .members .member {
     width: 310px;
     height: 446px;
+    border-radius: 20px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.content {
+    display: none;
+    background-color: gray;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0;
+    animation: fadeOut 1s;
+}
+
+.content.active {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.member .description {
+    font-size: 12px;
 }
