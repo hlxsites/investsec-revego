@@ -1,0 +1,38 @@
+.our-team ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.our-team ul li {
+    margin-right: 20px;
+    align-items: center;
+    flex-grow: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+li .active {
+    color: green;
+}
+
+li .inactive {
+    color: black;
+}
+
+.team.inactive {
+    display: none;
+}
+
+.team.active {
+    display: block;
+}
+
+.team .members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.our-team .members .member {
+    width: 310px;
+    height: 446px;
+}
