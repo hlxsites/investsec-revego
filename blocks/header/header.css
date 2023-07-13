@@ -190,6 +190,18 @@ header nav .nav-sections ul > li {
   border: 0;
 }
 
+header nav .nav-sections ul > li:hover:after {
+  content: '';
+  display: block;
+  border-bottom: #3A3A3C 10px;
+  position: absolute;
+  height: 4px;
+  transition: all 0.2s linear;
+  background-color: #076f3b;
+  width: 100%;
+  bottom: -35px;
+}
+
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
@@ -203,6 +215,7 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+    height: 100%;
   }
 
   header nav[aria-expanded="true"] .nav-sections {
@@ -237,7 +250,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 2em;
+    justify-content: flex-end;
     margin: 0;
     font-size: var(--body-font-size-xs);
   }
