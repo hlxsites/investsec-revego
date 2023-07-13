@@ -190,7 +190,7 @@ header nav .nav-sections ul > li {
   border: 0;
 }
 
-header nav .nav-sections ul > li:hover:after {
+header nav .nav-sections ul > li:hover::after {
   content: '';
   display: block;
   border-bottom: #3A3A3C 10px;
