@@ -1,6 +1,11 @@
 /* header and nav layout */
+header {
+  background-color: var(--nav-background-color);
+  color: #3A3A3C;
+}
+
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: var(--nav-background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -16,7 +21,6 @@ header nav {
   gap: 0 2em;
   margin: auto;
   max-width: 1264px;
-  height: var(--nav-height);
   padding: 0 1rem;
   font-family: var(--body-font-family);
 }
@@ -55,6 +59,10 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+}
+
+header nav a:hover {
+  text-decoration: none;
 }
 
 /* hamburger */
@@ -142,9 +150,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
+  font-size: var(--heading-font-size-3xs);
   font-weight: 700;
   line-height: 1;
+  text-align: right;
+  padding: 30px 0;
 }
 
 header nav .nav-brand img {
@@ -176,6 +186,20 @@ header nav .nav-sections ul  {
 
 header nav .nav-sections ul > li {
   font-weight: 700;
+  margin-left: 30px;
+  border: 0;
+}
+
+header nav .nav-sections ul > li:hover::after {
+  content: '';
+  display: block;
+  border-bottom: #3A3A3C 10px;
+  position: absolute;
+  height: 4px;
+  transition: all 0.2s linear;
+  background-color: #076f3b;
+  width: 100%;
+  bottom: -35px;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -191,6 +215,7 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap;
+    height: 100%;
   }
 
   header nav[aria-expanded="true"] .nav-sections {
@@ -225,7 +250,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 2em;
+    justify-content: flex-end;
     margin: 0;
     font-size: var(--body-font-size-xs);
   }
