@@ -188,6 +188,7 @@ header nav .nav-sections ul > li {
   margin-left: 30px;
   border: 0;
   text-transform: uppercase;
+  position: relative;
 }
 
 header nav .nav-sections ul > li:hover::after {
@@ -202,7 +203,6 @@ header nav .nav-sections ul > li:hover::after {
 }
 
 header nav .nav-sections ul > li[aria-expanded="true"]::after {
-  position: relative;
   bottom: 0;
 }
 
