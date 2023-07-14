@@ -149,7 +149,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 155px;
   font-size: var(--heading-font-size-3xs);
   font-weight: 700;
   line-height: 1;
@@ -158,7 +158,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 155px;
   height: auto;
 }
 
@@ -188,6 +188,7 @@ header nav .nav-sections ul > li {
   font-weight: 700;
   margin-left: 30px;
   border: 0;
+  text-transform: uppercase;
 }
 
 header nav .nav-sections ul > li:hover::after {
@@ -199,7 +200,7 @@ header nav .nav-sections ul > li:hover::after {
   transition: all 0.2s linear;
   background-color: #076f3b;
   width: 100%;
-  bottom: -35px;
+  bottom: -39px;
 }
 
 header nav .nav-sections ul > li > ul {
