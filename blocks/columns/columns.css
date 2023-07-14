@@ -31,3 +31,13 @@
     order: unset;
   }
 }
+
+.columns.edges {
+  margin-left: -16px;
+  margin-right: -16px;
+  height: 150px;
+}
+
+.columns.edges img {
+  width: 178px;
+}

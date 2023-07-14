@@ -1,11 +1,11 @@
 /* header and nav layout */
 header {
-  background-color: var(--nav-background-color);
+  background-color: var(--overlay-background-color);
   color: #3A3A3C;
 }
 
 header .nav-wrapper {
-  background-color: var(--nav-background-color);
+  background-color: var(--overlay-background-color);
   width: 100%;
   z-index: 2;
   position: fixed;
