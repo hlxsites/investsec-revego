@@ -23,24 +23,6 @@ function wrapImgsInLinks(container) {
   });
 }
 
-function decorateSectionMetadata(section) {
-  /* process section metadata */
-  const sectionMeta = section.querySelector('div.section-metadata');
-  if (sectionMeta) {
-    const meta = readBlockConfig(sectionMeta);
-    Object.keys(meta).forEach((key) => {
-      if (key === 'style') {
-        const styles = meta.style.split(',').map((style) => toClassName(style.trim()));
-        styles.forEach((style) => section.classList.add(style));
-        section.classList.add('section');
-      } else {
-        section.dataset[toCamelCase(key)] = meta[key];
-      }
-    });
-    sectionMeta.remove();
-  }
-}
-
 /**
  * loads and decorates the footer
  * @param {Element} block The footer block element
