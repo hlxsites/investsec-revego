@@ -1,4 +1,10 @@
-import { readBlockConfig, decorateIcons, decorateSections, createOptimizedPicture, toClassName} from '../../scripts/lib-franklin.js';
+import {
+  readBlockConfig,
+  decorateIcons,
+  createOptimizedPicture,
+  toClassName,
+  toCamelCase,
+} from '../../scripts/lib-franklin.js';
 
 /**
  * Wraps images followed by links within a matching <a> tag.
@@ -58,8 +64,7 @@ export default async function decorate(block) {
       decorateSectionMetadata(section);
     });
     footer.querySelector('.edges').querySelectorAll('img').forEach(
-      (img) => 
-        img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '178' }]))
+      (img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '178' }])),
     );
 
     block.append(footer);
