@@ -1,9 +1,11 @@
 import {
   readBlockConfig,
   decorateIcons,
+  decorateSections,
   createOptimizedPicture,
   toClassName,
   toCamelCase,
+  updateSectionsStatus,
 } from '../../scripts/lib-franklin.js';
 
 /**
@@ -60,13 +62,12 @@ export default async function decorate(block) {
 
     decorateIcons(footer);
 
-    Array.from(footer.children).forEach((section) => {
-      decorateSectionMetadata(section);
-    });
-    footer.querySelector('.edges').querySelectorAll('img').forEach(
-      (img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '178' }])),
+    decorateSections(footer);
+    footer.querySelectorAll('img').forEach(
+      (img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '160' }])),
     );
 
+    updateSectionsStatus(footer);
     block.append(footer);
 
     wrapImgsInLinks(block);
