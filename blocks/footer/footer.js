@@ -3,8 +3,6 @@ import {
   decorateIcons,
   decorateSections,
   createOptimizedPicture,
-  toClassName,
-  toCamelCase,
   updateSectionsStatus,
 } from '../../scripts/lib-franklin.js';
 
