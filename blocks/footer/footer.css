@@ -15,7 +15,8 @@ footer .footer a {
 
 footer .footer .section {
   max-width: 1200px;
-  margin: auto
+  margin: auto;
+  padding: 0 16px;
 }
 
 footer .footer .section > div {
