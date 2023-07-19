@@ -29,8 +29,9 @@ header nav[aria-expanded="true"] {
   grid-template:
     'brand hamburger' var(--nav-height)
     'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
+    'tools tools' var(--nav-height) / auto auto;
   overflow-y: auto;
+  justify-content: space-between;
 }
 
 @media (min-width: 600px) {
@@ -85,6 +86,10 @@ header nav .nav-hamburger button {
   white-space: initial;
 }
 
+header nav .nav-hamburger-icon {
+  height: 22px;
+}
+
 header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
@@ -115,10 +120,6 @@ header nav[aria-expanded="false"] .nav-hamburger-icon::before {
 
 header nav[aria-expanded="false"] .nav-hamburger-icon::after {
   top: 6px;
-}
-
-header nav[aria-expanded="true"] .nav-hamburger-icon {
-  height: 22px;
 }
 
 header nav[aria-expanded="true"] .nav-hamburger-icon::before,
