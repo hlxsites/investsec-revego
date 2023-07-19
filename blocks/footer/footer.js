@@ -1,4 +1,25 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import {
+  readBlockConfig,
+  decorateIcons,
+  decorateSections,
+  createOptimizedPicture,
+  updateSectionsStatus,
+} from '../../scripts/lib-franklin.js';
+
+/**
+ * Wraps images followed by links within a matching <a> tag.
+ * @param {Element} container The container element
+ */
+function wrapImgsInLinks(container) {
+  const pictures = container.querySelectorAll('picture');
+  pictures.forEach((pic) => {
+    const link = pic.nextElementSibling;
+    if (link && link.tagName === 'A' && link.href) {
+      link.innerHTML = pic.outerHTML;
+      pic.replaceWith(link);
+    }
+  });
+}
 
 /**
  * loads and decorates the footer
@@ -20,6 +41,15 @@ export default async function decorate(block) {
     footer.innerHTML = html;
 
     decorateIcons(footer);
+
+    decorateSections(footer);
+    footer.querySelectorAll('img').forEach(
+      (img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '160' }])),
+    );
+
+    updateSectionsStatus(footer);
     block.append(footer);
+
+    wrapImgsInLinks(block);
   }
 }

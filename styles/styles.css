@@ -16,9 +16,11 @@
   --link-hover-color: #136ff6;
   --background-color: #fff;
   --nav-background-color: #c4c4c4;
-  --overlay-background-color: #eee;
+  --overlay-background-color: #c4c4c4;
   --highlight-background-color: #ccc;
+  --dark-gray-background-color: #3a3c3c;
   --text-color: #000;
+  --text-color-white: #fff;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -243,4 +245,9 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+.section.dark-grey {
+  background-color: var(--dark-gray-background-color);
+  color: var(--text-color-white);
 }

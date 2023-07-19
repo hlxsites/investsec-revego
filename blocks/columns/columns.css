@@ -15,6 +15,10 @@
   order: 0;
 }
 
+.columns.edges img {
+  width: 178px;
+}
+
 .columns > div > .columns-img-col img {
   display: block;
 }
@@ -30,4 +34,10 @@
     flex: 1;
     order: unset;
   }
+}
+
+.columns.edges {
+  margin-left: -16px;
+  margin-right: -16px;
+  height: 150px;
 }
