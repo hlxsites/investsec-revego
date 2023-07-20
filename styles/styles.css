@@ -21,6 +21,9 @@
   --dark-gray-background-color: #3a3c3c;
   --text-color: #000;
   --text-color-white: #fff;
+  --background-color-green: #076F3B;
+  --background-color-light-grey: #F2F2F2;
+  --background-color-dark-grey: #3A3C3C;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -247,7 +250,19 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+.section.green {
+  background-color: var(--background-color-green);
+}
+
 .section.dark-grey {
-  background-color: var(--dark-gray-background-color);
+  background-color: var(--background-color-dark-grey);
   color: var(--text-color-white);
+}
+
+.section.light-grey {
+  background-color: var(--background-color-light-grey);
+}
+
+.section.centered {
+  text-align: center;
 }
