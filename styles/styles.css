@@ -292,6 +292,11 @@ main .section.highlight {
 
 .section.green {
   background-color: var(--background-color-green);
+  color: var(--text-color-white);
+}
+
+.section.green h1,h2 {
+  color: var(--text-color-white);
 }
 
 .section.dark-grey {
@@ -345,11 +350,6 @@ main .section.mission img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
-
-main .section h2 {
-  color: var(--background-color-green);
-  font-size: 31px;
 }
 
 .columns strong h3 {
