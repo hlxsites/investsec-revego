@@ -1,14 +1,12 @@
 .columns > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
+  align-items: stretch;
 }
 
 .columns > div > div {
   order: 1;
+  flex-basis: auto;
 }
 
 .columns > div > .columns-img-col {

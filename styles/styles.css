@@ -24,6 +24,7 @@
   --background-color-green: #076F3B;
   --background-color-light-grey: #F2F2F2;
   --background-color-dark-grey: #3A3C3C;
+  --background-color-white: #fff;
 
   /* fonts */
   --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
@@ -31,6 +32,8 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
+  --body-font-size-xl: 59px;
+  --body-font-size-l: 29px;
   --body-font-size-m: 22px;
   --body-font-size-s: 18px;
   --body-font-size-xs: 15px;
@@ -180,8 +183,8 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  border: 1px solid var(--background-color-white);
+  padding: 16px 20px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -192,7 +195,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 2px;
 }
 
 a.button:hover,
@@ -290,13 +293,19 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+/* colors */
 .section.green {
   background-color: var(--background-color-green);
   color: var(--text-color-white);
 }
 
-.section.green h1,h2 {
+.section.green h1, .section.green h2 {
   color: var(--text-color-white);
+}
+
+.section.green .button-container a {
+  background-color: var(--background-color-green);
+  border-color: var(--background-color-white);
 }
 
 .section.dark-grey {
@@ -308,15 +317,16 @@ main .section.highlight {
   background-color: var(--background-color-light-grey);
 }
 
+
 .section.centered {
   text-align: center;
 }
 
-/* Revego Mission */
-main .section.mission>div {
-  max-width: unset;
+.section.centered img {
+  margin: 0 auto;
 }
 
+/* Revego Mission */
 main .section.mission {
   line-height: 46.5px;
   font-size: 31px;
@@ -352,8 +362,27 @@ main .section.mission img {
   height: 100%;
 }
 
-.columns strong h3 {
+.columns h3 {
   line-height: 35px;
   font-size: 25px;
   font-weight: 300;
+}
+
+.columns.white-box > div > div {
+  background-color: var(--background-color-white);
+  height: 100%;
+}
+
+.section.highlights h2 {
+  margin-bottom: 30px;
+}
+
+.section.highlights strong {
+  font-size: var(--body-font-size-xl);
+}
+
+.section.highlights em {
+  font-size: var(--body-font-size-l);
+  line-height: 1.5;
+  font-style: normal;
 }
