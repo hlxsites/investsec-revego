@@ -71,3 +71,13 @@
 .columns.goto-link a::after {
   content: ">";
 }
+
+.columns h3 {
+  line-height: 35px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.columns.white-box > div > div {
+  background-color: var(--background-color-white);
+}

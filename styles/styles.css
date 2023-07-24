@@ -288,36 +288,6 @@ main .section {
   }
 }
 
-/* section metadata */
-main .section.highlight {
-  background-color: var(--highlight-background-color);
-}
-
-/* colors */
-.section.green {
-  background-color: var(--background-color-green);
-  color: var(--text-color-white);
-}
-
-.section.green h1, .section.green h2 {
-  color: var(--text-color-white);
-}
-
-.section.green .button-container a {
-  background-color: var(--background-color-green);
-  border-color: var(--background-color-white);
-}
-
-.section.dark-grey {
-  background-color: var(--background-color-dark-grey);
-  color: var(--text-color-white);
-}
-
-.section.light-grey {
-  background-color: var(--background-color-light-grey);
-}
-
-
 .section.centered {
   text-align: center;
 }
@@ -326,7 +296,8 @@ main .section.highlight {
   margin: 0 auto;
 }
 
-/* Revego Mission */
+
+/* Mission */
 main .section.mission {
   line-height: 46.5px;
   font-size: 31px;
@@ -362,14 +333,9 @@ main .section.mission img {
   height: 100%;
 }
 
-.columns h3 {
-  line-height: 35px;
-  font-size: 25px;
-  font-weight: 300;
-}
-
-.columns.white-box > div > div {
-  background-color: var(--background-color-white);
+/* Highlights */
+.section.highlight {
+  background-color: var(--highlight-background-color);
 }
 
 .section.highlights h2 {
@@ -386,26 +352,7 @@ main .section.mission img {
   font-style: normal;
 }
 
-.section.shareholder a {
-  color: var(--text-color);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: 300;
-  background-color: transparent;
-}
-
-.section.shareholder a:hover {
-  text-decoration: none;
-}
-
-.section.service-provider div {
-  padding: 0 !important;
-}
-
-.section.service-provider .columns p {
-  max-width: 190px;
-  margin: auto;
-}
-
+/* Contact Us */
 .section.contact-us strong {
   font-size: var(--body-font-size-s);
   color: var(--background-color-green);
@@ -416,11 +363,58 @@ main .section.mission img {
   color: var(--background-color-green);
 }
 
+.section.contact-us div {
+  gap: 20px;
+}
+
+/* Shareholder */
+.section.shareholder a {
+  color: var(--text-color);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 300;
+  background-color: transparent;
+}
+
 .section.contact-us a:hover {
   text-decoration: none;
   color: var(--text-color);
 }
 
-.section.contact-us div {
-  gap: 20px;
+.section.shareholder a:hover {
+  text-decoration: none;
+}
+
+/* Service Provider */
+.section.service-provider div {
+  padding: 0 !important;
+}
+
+.section.service-provider .columns p {
+  max-width: 190px;
+  margin: auto;
+}
+
+
+/* colors */
+.section.green {
+  background-color: var(--background-color-green);
+  color: var(--text-color-white);
+}
+
+.section.green h1, .section.green h2 {
+  color: var(--text-color-white);
+}
+
+.section.green .button-container a {
+  background-color: var(--background-color-green);
+  border-color: var(--background-color-white);
+}
+
+.section.dark-grey {
+  background-color: var(--background-color-dark-grey);
+  color: var(--text-color-white);
+}
+
+.section.light-grey {
+  background-color: var(--background-color-light-grey);
 }
