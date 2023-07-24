@@ -420,3 +420,7 @@ main .section.mission img {
   text-decoration: none;
   color: var(--text-color);
 }
+
+.section.contact-us div {
+  gap: 20px;
+}
