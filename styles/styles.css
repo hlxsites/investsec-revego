@@ -370,7 +370,6 @@ main .section.mission img {
 
 .columns.white-box > div > div {
   background-color: var(--background-color-white);
-  height: 100%;
 }
 
 .section.highlights h2 {
@@ -385,4 +384,39 @@ main .section.mission img {
   font-size: var(--body-font-size-l);
   line-height: 1.5;
   font-style: normal;
+}
+
+.section.shareholder a {
+  color: var(--text-color);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 300;
+  background-color: transparent;
+}
+
+.section.shareholder a:hover {
+  text-decoration: none;
+}
+
+.section.service-provider div {
+  padding: 0 !important;
+}
+
+.section.service-provider .columns p {
+  max-width: 190px;
+  margin: auto;
+}
+
+.section.contact-us strong {
+  font-size: var(--body-font-size-s);
+  color: var(--background-color-green);
+  font-weight: 400;
+}
+
+.section.contact-us a {
+  color: var(--background-color-green);
+}
+
+.section.contact-us a:hover {
+  text-decoration: none;
+  color: var(--text-color);
 }

@@ -1,3 +1,12 @@
+.columns {
+  padding: 50px 0;
+  text-align: left;
+}
+
+.columns.centered {
+  text-align: center;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -7,6 +16,15 @@
 .columns > div > div {
   order: 1;
   flex-basis: auto;
+  padding: 35px 0;
+}
+
+.columns > div > div:first-child {
+  padding-top: 35px;
+}
+
+.columns > div > div:last-child {
+  padding-bottom: 35px;
 }
 
 .columns > div > .columns-img-col {
@@ -25,7 +43,7 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+    gap: 120px;
   }
 
   .columns > div > div {
@@ -38,4 +56,18 @@
   margin-left: -16px;
   margin-right: -16px;
   height: 150px;
+}
+
+.columns.goto-link a {
+  position: relative;
+  top: -160px;
+  right: -375px;
+  background-color: var(--background-color-green);
+  color: var(--text-color-white);
+  text-decoration: none;
+  padding:16px 20px;
+}
+
+.columns.goto-link a::after {
+  content: ">";
 }
