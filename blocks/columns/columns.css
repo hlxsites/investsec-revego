@@ -1,5 +1,4 @@
 .columns {
-  padding: 50px 0;
   text-align: left;
 }
 
@@ -52,6 +51,10 @@
 
 
 @media (min-width: 900px) {
+  .columns {
+    padding: 50px 0;
+  }
+
   .columns > div {
     align-items: center;
     flex-direction: unset;
