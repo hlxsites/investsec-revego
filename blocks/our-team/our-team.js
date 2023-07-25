@@ -3,9 +3,9 @@ export default async function decorate(block) {
   const data = await resp.json();
   const teams = {};
   const mapNumberedStyle = {
-    3: "three",
-    4: "four",
-  }
+    3: 'three',
+    4: 'four',
+  };
 
   const teamMenu = document.createElement('div');
   teamMenu.classList.add('team-menu');
@@ -67,7 +67,7 @@ export default async function decorate(block) {
     block.append(team);
   });
 
-  const memberPerTeam = {}
+  const memberPerTeam = {};
   data.members.data.forEach((member) => {
     if (!memberPerTeam[member.team]) {
       memberPerTeam[member.team] = 0;
