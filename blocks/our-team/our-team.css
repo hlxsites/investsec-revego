@@ -30,15 +30,44 @@ li .inactive {
 .team .members {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 0;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
 .our-team .members .member {
-    width: 310px;
     height: 446px;
     border-radius: 20px;
     background-position: center center;
     background-size: cover;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.member.three {
+    width: 100%;
+}
+
+.member.four {
+    width: 100%;
+}
+
+.member.five {
+    width: 100%;
+}
+
+@media (min-width: 750px) {
+    .member.three {
+        width: 32.7%;
+    }
+    
+    .member.four {
+        width: 24.4%;
+    }
+    
+    .member.five {
+        width: 19.3%;
+    }
 }
 
 .content {

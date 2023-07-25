@@ -2,6 +2,10 @@ export default async function decorate(block) {
   const resp = await fetch('/our-team.json');
   const data = await resp.json();
   const teams = {};
+  const mapNumberedStyle = {
+    3: "three",
+    4: "four",
+  }
 
   const teamMenu = document.createElement('div');
   teamMenu.classList.add('team-menu');
@@ -62,10 +66,22 @@ export default async function decorate(block) {
     block.append(team);
   });
 
+  const memberPerTeam = {}
+  data.members.data.forEach((member) => {
+    if (!memberPerTeam[member.team]) {
+      memberPerTeam[member.team] = 0;
+    }
+
+    memberPerTeam[member.team] += 1;
+  });
+
   data.members.data.forEach((member) => {
     const memberElement = document.createElement('div');
     memberElement.classList.add('member');
     memberElement.style.backgroundImage = `url(${member.picture})`;
+
+    const numberedStyle = memberPerTeam[member.team] in mapNumberedStyle ? mapNumberedStyle[memberPerTeam[member.team]] : 'five';
+    memberElement.classList.add(numberedStyle);
 
     memberElement.addEventListener('mouseover', (event) => {
       event.currentTarget.querySelector('.content').classList.add('active');
