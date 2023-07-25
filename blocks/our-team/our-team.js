@@ -55,6 +55,7 @@ export default async function decorate(block) {
     });
 
     const description = document.createElement('p');
+    description.classList.add('description');
     description.textContent = teamData.description;
     team.append(description);
 
@@ -95,6 +96,7 @@ export default async function decorate(block) {
     memberElement.append(memberContent);
 
     const memberName = document.createElement('div');
+    memberName.classList.add('name');
     memberName.textContent = member.name;
     memberContent.append(memberName);
 
@@ -105,10 +107,10 @@ export default async function decorate(block) {
     }
 
     if (member.description) {
-      const memberDescription = document.createElement('div');
-      memberDescription.classList.add('description');
-      memberDescription.textContent = member.description;
-      memberContent.append(memberDescription);
+      const memberBio = document.createElement('div');
+      memberBio.classList.add('bio');
+      memberBio.textContent = member.description;
+      memberContent.append(memberBio);
     }
 
     if (member.linkedin) {
