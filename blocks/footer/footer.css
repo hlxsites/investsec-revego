@@ -11,6 +11,8 @@ footer .footer {
 footer .footer a {
   cursor: pointer;
   color: var(--dark-gray-background-color);
+  display: inline-block;
+  padding-bottom: 20px;
 }
 
 footer .footer .section {
