@@ -2,6 +2,10 @@ export default async function decorate(block) {
   const resp = await fetch('/our-team.json');
   const data = await resp.json();
   const teams = {};
+  const mapNumberedStyle = {
+    3: 'three',
+    4: 'four',
+  };
 
   const teamMenu = document.createElement('div');
   teamMenu.classList.add('team-menu');
@@ -51,6 +55,7 @@ export default async function decorate(block) {
     });
 
     const description = document.createElement('p');
+    description.classList.add('description');
     description.textContent = teamData.description;
     team.append(description);
 
@@ -62,10 +67,26 @@ export default async function decorate(block) {
     block.append(team);
   });
 
+  const memberPerTeam = {};
+  data.members.data.forEach((member) => {
+    if (!memberPerTeam[member.team]) {
+      memberPerTeam[member.team] = 0;
+    }
+
+    memberPerTeam[member.team] += 1;
+  });
+
   data.members.data.forEach((member) => {
     const memberElement = document.createElement('div');
     memberElement.classList.add('member');
     memberElement.style.backgroundImage = `url(${member.picture})`;
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.appendChild(memberElement);
+
+    const numberedStyle = memberPerTeam[member.team] in mapNumberedStyle ? mapNumberedStyle[memberPerTeam[member.team]] : 'five';
+    card.classList.add(numberedStyle);
 
     memberElement.addEventListener('mouseover', (event) => {
       event.currentTarget.querySelector('.content').classList.add('active');
@@ -79,6 +100,7 @@ export default async function decorate(block) {
     memberElement.append(memberContent);
 
     const memberName = document.createElement('div');
+    memberName.classList.add('name');
     memberName.textContent = member.name;
     memberContent.append(memberName);
 
@@ -89,10 +111,10 @@ export default async function decorate(block) {
     }
 
     if (member.description) {
-      const memberDescription = document.createElement('div');
-      memberDescription.classList.add('description');
-      memberDescription.textContent = member.description;
-      memberContent.append(memberDescription);
+      const memberBio = document.createElement('div');
+      memberBio.classList.add('bio');
+      memberBio.textContent = member.description;
+      memberContent.append(memberBio);
     }
 
     if (member.linkedin) {
@@ -102,6 +124,6 @@ export default async function decorate(block) {
       memberContent.append(memberLinkedIn);
     }
 
-    teams[member.team].append(memberElement);
+    teams[member.team].append(card);
   });
 }

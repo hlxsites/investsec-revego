@@ -186,7 +186,7 @@ header nav .nav-sections ul  {
 
 header nav .nav-sections ul > li {
   font-weight: 700;
-  margin-left: 30px;
+  margin-left: 18px;
   border: 0;
   text-transform: uppercase;
   position: relative;
@@ -201,10 +201,6 @@ header nav .nav-sections ul > li:hover::after {
   background-color: #076f3b;
   width: 100%;
   bottom: -39px;
-}
-
-header nav .nav-sections ul > li[aria-expanded="true"]::after {
-  bottom: 0;
 }
 
 header nav .nav-sections ul > li > ul {
