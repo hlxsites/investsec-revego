@@ -81,8 +81,12 @@ export default async function decorate(block) {
     memberElement.classList.add('member');
     memberElement.style.backgroundImage = `url(${member.picture})`;
 
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.appendChild(memberElement);
+
     const numberedStyle = memberPerTeam[member.team] in mapNumberedStyle ? mapNumberedStyle[memberPerTeam[member.team]] : 'five';
-    memberElement.classList.add(numberedStyle);
+    card.classList.add(numberedStyle);
 
     memberElement.addEventListener('mouseover', (event) => {
       event.currentTarget.querySelector('.content').classList.add('active');
@@ -120,6 +124,6 @@ export default async function decorate(block) {
       memberContent.append(memberLinkedIn);
     }
 
-    teams[member.team].append(memberElement);
+    teams[member.team].append(card);
   });
 }

@@ -38,7 +38,6 @@ li .inactive {
 .team .members {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
     flex-wrap: wrap;
 }
 
@@ -49,45 +48,42 @@ li .inactive {
     background-size: cover;
     display: flex;
     align-items: stretch;
+    margin-right: 5px;
 }
 
-.member.three {
+.card.three {
     width: 100%;
 }
 
-.member.four {
+.card.four {
     width: 100%;
 }
 
-.member.five {
+.card.five {
     width: 100%;
 }
 
 @media (min-width: 750px) {
-    .member.three {
-        width: 32.7%;
+    .card.three {
+        width: 33.3%;
     }
     
-    .member.four {
-        width: 24.4%;
-    }
-    
-    .member.five {
-        width: 24.4%;
+    .card.four, .card.five{
+        width: 25%;
     }
 }
 
 @media (min-width: 1000px) {
-    .member.three {
-        width: 32.7%;
+    .card.three {
+        width: 33.3%;
     }
     
-    .member.four {
-        width: 24.4%;
+    .card.four {
+        width: 25%;
     }
     
-    .member.five {
-        width: 19.3%;
+    .card.five {
+        width: 20%;
     }
 }
 
