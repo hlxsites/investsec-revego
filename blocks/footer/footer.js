@@ -15,6 +15,7 @@ function wrapImgsInLinks(container) {
   pictures.forEach((pic) => {
     const link = pic.nextElementSibling;
     if (link && link.tagName === 'A' && link.href) {
+      link.title = link.textContent;
       link.innerHTML = pic.outerHTML;
       pic.replaceWith(link);
     }
