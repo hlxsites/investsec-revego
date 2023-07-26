@@ -1,0 +1,25 @@
+version: 1
+indices:
+  news:
+    include:
+      - /news/**
+    target: /news/query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      date:
+        select: head > meta[name="publication-date"]
+        value: parseTimestamp(attribute(el, "content"), "MM/DD/YYYY")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      card-title:
+        select: head > meta[name="card-title"]
+        value: attribute(el, "content")
+      card-description:
+        select: head > meta[name="card-description"]
+        value: attribute(el, "content")
+      card-thumbnail:
+        select: head > meta[name="card-thumbnail"]
+        value: attribute(el, "content")
