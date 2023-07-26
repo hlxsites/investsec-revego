@@ -14,7 +14,7 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
-import { buildProjectsTemplate } from './revego.js';
+import buildProjectsTemplate from './revego.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
