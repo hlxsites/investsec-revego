@@ -1,5 +1,22 @@
 version: 1
 indices:
+  default:
+    include:
+      - /**
+    target: /query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      description2:
+        select: head > meta[name="description2"]
+        value: attribute(el, "content")
   news:
     include:
       - /news/**
