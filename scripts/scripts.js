@@ -8,10 +8,13 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  getMetadata,
   waitForLCP,
   loadBlocks,
   loadCSS,
 } from './lib-franklin.js';
+
+import { buildProjectsTemplate } from './revego.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -55,6 +58,10 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+
+  if (getMetadata('template') === 'projects') {
+    buildProjectsTemplate();
+  }
 }
 
 /**
@@ -63,8 +70,10 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
+
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
