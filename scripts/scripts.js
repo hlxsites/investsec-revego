@@ -14,8 +14,6 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
-import buildProjectsTemplate from './revego.js';
-
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
@@ -59,9 +57,12 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
 
-  if (getMetadata('template') === 'projects') {
-    buildProjectsTemplate();
-  }
+  (async () => {
+    if (getMetadata('template') === 'projects') {
+      const buildProjectsTemplate = await import('./revego.js');
+      buildProjectsTemplate.default();
+    }
+  })();
 }
 
 /**

@@ -9,6 +9,7 @@ const properties = {
 function createProject(element) {
   const project = document.createElement('div');
   project.classList.add('project');
+  project.dataset.title = element.querySelector('h2').textContent;
 
   const card = document.createElement('div');
   card.classList.add('card');
@@ -47,12 +48,15 @@ function createProject(element) {
 }
 
 export default async function buildProjectsTemplate() {
-  const projectsName = document.querySelectorAll('h2');
   const sections = document.querySelectorAll('div.section');
   const main = document.querySelector('main');
 
+  const section = document.createElement('div');
+  section.classList.add('section');
+
   const projectsFlex = document.createElement('div');
   projectsFlex.classList.add('projects-view');
+  section.append(projectsFlex);
 
   const projectsListContainer = document.createElement('div');
   projectsListContainer.classList.add('projects-list-container');
@@ -62,19 +66,25 @@ export default async function buildProjectsTemplate() {
   projectsListContainer.append(projectsList);
   projectsFlex.append(projectsListContainer);
   projectsFlex.append(projectsDescription);
-  projectsName.forEach((element) => {
+
+  sections.forEach((element) => {
+    const title = element.querySelector('h2');
     const li = document.createElement('li');
-    li.innerHTML = element.textContent;
+    li.innerHTML = title.textContent;
+
+    li.addEventListener('click', (event) => {
+      projectsList.querySelector('.active').classList.remove('active');
+      projectsDescription.querySelector('.active').classList.remove('active');
+      event.currentTarget.classList.add('active');
+      projectsFlex.querySelector(`div[data-title="${event.currentTarget.textContent}"]`).classList.add('active');
+    });
     projectsList.append(li);
+    projectsDescription.append(createProject(element));
+    main.removeChild(element);
   });
 
   projectsList.firstChild.classList.add('active');
-
-  sections.forEach((element) => {
-    projectsDescription.append(createProject(element));
-  });
-
   projectsDescription.firstChild.classList.add('active');
 
-  main.prepend(projectsFlex);
+  main.prepend(section);
 }

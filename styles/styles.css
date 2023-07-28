@@ -480,6 +480,13 @@ main .projects-view .card {
 main .projects-view .card h2 {
   background-color: var(--background-color-light-grey);
   margin: 0;
+  padding-top: 12%;
+  width: 30%;
+}
+
+main .projects-view .card picture {
+  object-fit: cover;
+  width: 70%;
 }
 
 main .projects-view .table {
