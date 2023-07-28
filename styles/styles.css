@@ -443,14 +443,19 @@ main .section.mission img {
 }
 
 /* Project template */
-
 main .projects-view {
   display: flex;
+  flex-direction: column-reverse;
   align-items: stretch;
+}
+
+main .projects-view .projects-list-container {
+  width: 30%;
 }
 
 main .projects-view .projects-list-container ul {
   list-style: none;
+  padding: 0;
 }
 
 main .projects-view .projects-list-container li {
@@ -505,4 +510,11 @@ main .projects-view .table .key {
 main .projects-view .table .value {
   background-color: var(--background-color-light-grey);
   padding: 10px;
+}
+
+@media (min-width: 900px) {
+  main .projects-view {
+    display: flex;
+    flex-direction: row;
+  }
 }
