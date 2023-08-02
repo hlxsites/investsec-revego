@@ -2,12 +2,9 @@
     --ggs: 1.5;
 }
 
-.news-carousel {
+.slider {
     display: flex;
     align-items: center;
-}
-
-.slider {
     position: relative;
     width: 100%;
 }
