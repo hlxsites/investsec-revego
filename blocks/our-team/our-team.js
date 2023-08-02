@@ -81,7 +81,6 @@ export default async function decorate(block) {
   data.members.data.forEach((member) => {
     const memberElement = document.createElement('div');
     memberElement.classList.add('member');
-    //memberElement.style.backgroundImage = `url(${member.picture})`;
 
     memberElement.append(createOptimizedPicture(member.picture, member.name, false, [{ width: '600' }]));
 
