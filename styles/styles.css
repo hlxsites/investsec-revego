@@ -449,13 +449,6 @@ main .projects-view {
   align-items: stretch;
 }
 
-main .projects-view .projects-list-container {
-  width: 20%;
-}
-
-main .projects-view .projects-description {
-  width: 80%;
-}
 
 main .projects-view .projects-list-container ul {
   list-style: none;
@@ -491,12 +484,10 @@ main .projects-view .card h2 {
   background-color: var(--background-color-light-grey);
   margin: 0;
   padding-top: 12%;
-  width: 30%;
 }
 
 main .projects-view .card picture {
   object-fit: cover;
-  width: 70%;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
@@ -533,5 +524,13 @@ main .projects-view .table .value {
   main .projects-view {
     display: flex;
     flex-direction: row;
+  }
+
+  main .projects-view .projects-list-container {
+    width: 20%;
+  }
+  
+  main .projects-view .projects-description {
+    width: 80%;
   }
 }
