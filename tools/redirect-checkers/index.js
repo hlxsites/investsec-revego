@@ -32,7 +32,6 @@ const failures = [];
     console.log(success);
     console.log('Failures:');
     console.log(failures);
-
   } catch (error) {
     console.log(error);
     process.exit(1);

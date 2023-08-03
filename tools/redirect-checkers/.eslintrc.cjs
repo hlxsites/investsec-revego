@@ -1,13 +1,21 @@
 module.exports = {
+  root: true,
+  extends: 'airbnb-base',
   env: {
     browser: true,
-    es2021: true,
   },
-  extends: 'eslint:recommended',
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 'latest',
+    allowImportExportEverywhere: true,
     sourceType: 'module',
+    requireConfigFile: false,
   },
   rules: {
+    // allow reassigning param
+    'no-param-reassign': [2, { props: false }],
+    'linebreak-style': ['error', 'unix'],
+    'import/extensions': ['error', {
+      js: 'always',
+    }],
   },
 };
