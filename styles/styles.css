@@ -484,6 +484,7 @@ main .projects-view .card h2 {
   background-color: var(--background-color-light-grey);
   margin: 0;
   padding-top: 12%;
+  width: 30%;
 }
 
 main .projects-view .card picture {
@@ -492,10 +493,13 @@ main .projects-view .card picture {
   justify-content: flex-end;
   overflow: hidden;
   position: relative;
+  width: 70%;
 }
 
 main .projects-view .card picture img {
   width: 650px;
+  height: 192px;
+  height: auto;
   flex-shrink: 0;
   position: absolute;
   bottom: -30px;

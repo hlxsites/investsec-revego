@@ -8,7 +8,7 @@ const properties = {
   developer: 'Developer',
 };
 
-function createProject(element) {
+function createProject(element, firstChild) {
   const project = document.createElement('div');
   project.classList.add('project');
   project.dataset.title = element.querySelector('h2').textContent;
@@ -24,7 +24,7 @@ function createProject(element) {
   const resizedPicture = createOptimizedPicture(
     card.querySelector('img').src,
     card.querySelector('img').alt,
-    false,
+    true,
     [{ width: '650' }],
   );
   card.querySelector('picture').replaceWith(resizedPicture);
@@ -78,7 +78,8 @@ export default async function buildProjectsTemplate() {
   projectsFlex.append(projectsListContainer);
   projectsFlex.append(projectsDescription);
 
-  sections.forEach((element) => {
+  sections.forEach((element, index) => {
+    const firstChild = index === 0;
     const title = element.querySelector('h2');
     const li = document.createElement('li');
     li.innerHTML = title.textContent;
@@ -90,7 +91,7 @@ export default async function buildProjectsTemplate() {
       projectsFlex.querySelector(`div[data-title="${event.currentTarget.textContent}"]`).classList.add('active');
     });
     projectsList.append(li);
-    projectsDescription.append(createProject(element));
+    projectsDescription.append(createProject(element, firstChild));
     main.removeChild(element);
   });
 
