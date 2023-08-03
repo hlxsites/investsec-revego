@@ -1,15 +1,15 @@
-const url = process.argv[2];
-const franklin = process.argv[3];
-
 import Sitemapper from 'sitemapper';
 import fetch from 'node-fetch';
+
+const sitemapUrl = process.argv[2];
+const franklin = process.argv[3];
 
 const success = [];
 const failures = [];
 
 (async () => {
   const site = new Sitemapper({
-    url,
+    sitemapUrl,
     timeout: 15000,
   });
 
@@ -18,12 +18,12 @@ const failures = [];
 
     for (const url of sites) {
       const parsedUrl = new URL(url);
-      const newUrl = new URL (franklin + parsedUrl.pathname);
+      const newUrl = new URL(franklin + parsedUrl.pathname);
       await fetch(newUrl, {}).then((response) => {
         if (response.status >= 299) {
-          failures.push({url: newUrl.toString(), status: response.status});
+          failures.push({ url: newUrl.toString(), status: response.status });
         } else {
-          success.push({url: newUrl.toString(), status: response.status});
+          success.push({ url: newUrl.toString(), status: response.status });
         }
       });
     }
