@@ -450,7 +450,11 @@ main .projects-view {
 }
 
 main .projects-view .projects-list-container {
-  width: 30%;
+  width: 20%;
+}
+
+main .projects-view .projects-description {
+  width: 80%;
 }
 
 main .projects-view .projects-list-container ul {
@@ -480,6 +484,7 @@ main .projects-view .project.active {
 main .projects-view .card {
   display: flex;
   text-align: center;
+  min-height: 300px;
 }
 
 main .projects-view .card h2 {
@@ -492,7 +497,19 @@ main .projects-view .card h2 {
 main .projects-view .card picture {
   object-fit: cover;
   width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
 }
+
+main .projects-view .card picture img {
+  width: 650px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: -30px;
+}
+
 
 main .projects-view .table {
   display: grid;

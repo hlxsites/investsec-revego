@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from './lib-franklin.js';
+
 const properties = {
   technology: 'Technology',
   installedCapacity: 'Installed Capacity',
@@ -18,6 +20,14 @@ function createProject(element) {
   card.append(element.querySelector('picture'));
   project.append(card);
   project.append(element.querySelector('ul'));
+
+  const resizedPicture = createOptimizedPicture(
+    card.querySelector('img').src,
+    card.querySelector('img').alt,
+    false,
+    [{ width: '650' }],
+  );
+  card.querySelector('picture').replaceWith(resizedPicture);
 
   const table = document.createElement('div');
   table.classList.add('table');
@@ -62,6 +72,7 @@ export default async function buildProjectsTemplate() {
   projectsListContainer.classList.add('projects-list-container');
 
   const projectsDescription = document.createElement('div');
+  projectsDescription.classList.add('projects-description');
   const projectsList = document.createElement('ul');
   projectsListContainer.append(projectsList);
   projectsFlex.append(projectsListContainer);
