@@ -8,7 +8,7 @@ const properties = {
   developer: 'Developer',
 };
 
-function createProject(element, firstChild) {
+function createProject(element) {
   const project = document.createElement('div');
   project.classList.add('project');
   project.dataset.title = element.querySelector('h2').textContent;
@@ -78,8 +78,7 @@ export default async function buildProjectsTemplate() {
   projectsFlex.append(projectsListContainer);
   projectsFlex.append(projectsDescription);
 
-  sections.forEach((element, index) => {
-    const firstChild = index === 0;
+  sections.forEach((element) => {
     const title = element.querySelector('h2');
     const li = document.createElement('li');
     li.innerHTML = title.textContent;
@@ -91,7 +90,7 @@ export default async function buildProjectsTemplate() {
       projectsFlex.querySelector(`div[data-title="${event.currentTarget.textContent}"]`).classList.add('active');
     });
     projectsList.append(li);
-    projectsDescription.append(createProject(element, firstChild));
+    projectsDescription.append(createProject(element));
     main.removeChild(element);
   });
 
