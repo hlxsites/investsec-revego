@@ -9,13 +9,15 @@ const failures = [];
 
 (async () => {
   const site = new Sitemapper({
-    sitemapUrl,
+    url: sitemapUrl,
     timeout: 15000,
   });
 
   try {
+    console.log(`Fetching sitemap from ${sitemapUrl} ...`);
     const { sites } = await site.fetch();
 
+    console.log(`Found ${sites.length} sites in sitemap.`, sites)
     for (const url of sites) {
       const parsedUrl = new URL(url);
       const newUrl = new URL(franklin + parsedUrl.pathname);
