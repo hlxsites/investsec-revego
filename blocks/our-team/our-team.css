@@ -63,6 +63,10 @@ li .inactive {
     max-width: none;
 }
 
+.card.two {
+    width: 100%;
+}
+
 .card.three {
     width: 100%;
 }
@@ -76,6 +80,10 @@ li .inactive {
 }
 
 @media (min-width: 750px) {
+    .card.two {
+        width: 50%;
+    }
+
     .card.three {
         width: 33.3%;
     }
