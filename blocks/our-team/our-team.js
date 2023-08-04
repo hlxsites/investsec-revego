@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
+
 export default async function decorate(block) {
   const resp = await fetch('/our-team.json');
   const data = await resp.json();
@@ -79,7 +81,8 @@ export default async function decorate(block) {
   data.members.data.forEach((member) => {
     const memberElement = document.createElement('div');
     memberElement.classList.add('member');
-    memberElement.style.backgroundImage = `url(${member.picture})`;
+
+    memberElement.append(createOptimizedPicture(member.picture, member.name, false, [{ width: '600' }]));
 
     const card = document.createElement('div');
     card.classList.add('card');

@@ -42,13 +42,25 @@ li .inactive {
 }
 
 .our-team .members .member {
+    position: relative;
     height: 446px;
     border-radius: 20px;
-    background-position: center center;
-    background-size: cover;
     display: flex;
-    align-items: stretch;
     margin-right: 5px;
+    overflow: hidden;
+}
+
+.our-team .members .member picture {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.our-team .members .member img {
+    flex-shrink: 0;
+    max-width: none;
 }
 
 .card.three {
@@ -88,6 +100,7 @@ li .inactive {
 }
 
 .content {
+    position: absolute;
     display: none;
     display: flex;
     flex-direction: column;
@@ -98,6 +111,7 @@ li .inactive {
     padding: 20px;
     opacity: 0;
     animation: fade-out 1s;
+    height: 100%;
 }
 
 .content.active {
