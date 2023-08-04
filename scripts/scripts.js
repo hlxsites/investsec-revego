@@ -8,6 +8,7 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  getMetadata,
   waitForLCP,
   loadBlocks,
   loadCSS,
@@ -55,6 +56,13 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+
+  (async () => {
+    if (getMetadata('template') === 'projects') {
+      const buildProjectsTemplate = await import('./revego.js');
+      buildProjectsTemplate.default();
+    }
+  })();
 }
 
 /**
@@ -63,8 +71,10 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
+
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
+
   if (main) {
     decorateMain(main);
     document.body.classList.add('appear');
