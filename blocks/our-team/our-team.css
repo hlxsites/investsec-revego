@@ -51,9 +51,10 @@ li .inactive {
 }
 
 .our-team .members .member picture {
-    position: absolute;
+    position: relative;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
     z-index: -1;
 }
