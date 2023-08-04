@@ -25,8 +25,7 @@ export default async function decorate(block) {
 `);
   });
 
-  block.innerHTML = jsx`<h3>News</h3>
-  <section class="slider">
+  block.innerHTML = jsx`<section class="slider">
     <span class="slider-control prev"><i class="gg-chevron-left-o"></i></span>
     <span class="slider-control next"><i class="gg-chevron-right-o"></i></span>
     <div class="slider-container" data-multislide="false" data-step="sm">

@@ -109,40 +109,8 @@ async function loadPage() {
   loadDelayed();
 }
 
-/**
- * Loads a CSS file.
- * @param {string} href The path to the CSS file
- */
-export function loadCSSCall(href, callback) {
-  if (!document.querySelector(`head > link[href="${href}"]`)) {
-    const link = document.createElement('link');
-    link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', href);
-    if (typeof callback === 'function') {
-      link.onload = (e) => callback(e.type);
-      link.onerror = (e) => callback(e.type);
-    }
-    document.head.appendChild(link);
-  } else if (typeof callback === 'function') {
-    callback('noop');
-  }
-}
-
 export function jsx(html, ...args) {
   return html.slice(1).reduce((str, elem, i) => str + args[i] + elem, html[0]);
-}
-
-export function htmlToElement(html) {
-  const template = document.createElement('template');
-  const htmlStripped = html.trim(); // Never return a text node of whitespace as the result
-  template.innerHTML = htmlStripped;
-  return template.content.firstChild;
-}
-
-export function htmlToElements(html) {
-  const template = document.createElement('template');
-  template.innerHTML = html;
-  return template.content.childNodes;
 }
 
 loadPage();
