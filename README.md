@@ -24,3 +24,7 @@ npm run lint
 1. Install the [Helix CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/helix-cli`
 1. Start Franklin Proxy: `hlx up` (opens your browser at `http://localhost:3000`)
 1. Open the `investsec-revego` directory in your favorite IDE and start coding :)
+
+## Site Documentation
+
+Here you can see all the section style in action seperately: https://main--investsec-revego--hlxsites.hlx.page/drafts/documentation/main-page-sections
