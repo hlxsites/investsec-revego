@@ -119,4 +119,8 @@ async function loadPage() {
   loadDelayed();
 }
 
+export function jsx(html, ...args) {
+  return html.slice(1).reduce((str, elem, i) => str + args[i] + elem, html[0]);
+}
+
 loadPage();
