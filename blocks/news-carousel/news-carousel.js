@@ -19,7 +19,6 @@ export default async function decorate(block) {
       <div class="slider-text">
         <h3><a href="${item.path}">${item['card-title']}</a></h3>
         <p>${item['card-description']}</p>
-        <a href="${item.path}">Read More</a> 
       </div>
     </div>
 `);
