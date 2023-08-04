@@ -84,6 +84,10 @@ li .inactive {
         width: 50%;
     }
 
+    .card.two img {
+        min-width: 600px;
+    }
+
     .card.three {
         width: 33.3%;
     }
