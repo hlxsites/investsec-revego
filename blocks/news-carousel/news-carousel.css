@@ -1,5 +1,5 @@
 :root {
-    --ggs: 1.5;
+    --ggs: 1.8;
 }
 
 .slider {
@@ -44,9 +44,9 @@
 .slider-control {
     border: 0;
     position: absolute;
-    top: 50%;
+    top: 25%;
     z-index: 10;
-    color: #076F3B;
+    color: #CACACA;
     background: #fff;
     cursor: pointer;
     opacity: .5;
@@ -106,10 +106,13 @@
     position: relative;
     display: block;
     transform: scale(var(--ggs, 1));
-    width: 22px;
-    height: 22px;
-    border: 2px solid;
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
     border-radius: 100px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 80%) 0 0 5px;
+    border-collapse: collapse;
 }
 
 .gg-chevron-right-o::after {
@@ -131,10 +134,13 @@
     position: relative;
     display: block;
     transform: scale(var(--ggs, 1));
-    width: 22px;
-    height: 22px;
-    border: 2px solid;
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
     border-radius: 100px;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 80%) 0 0 5px;
+    border-collapse: collapse;
 }
 
 .gg-chevron-left-o::after {
