@@ -43,3 +43,32 @@ indices:
       card-thumbnail:
         select: head > meta[name="card-thumbnail"]
         value: attribute(el, "content")
+  podcasts:
+    include:
+      - /podcast/**
+    target: /podcast/query-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      date:
+        select: head > meta[name="publication-date"]
+        value: parseTimestamp(attribute(el, "content"), "MM/DD/YYYY")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      teaser-title:
+        select: h1 + h2
+        value: textContent(el)
+      teaser-content:
+        select: p:first-of-type
+        value: textContent(el)
+      panellists:
+        select: head > meta[name="panellists"]
+        value: attribute(el, "content")
+      list-position:
+        select: head > meta[name="list-position"]
+        value: attribute(el, "content")
+      media-source:
+        select: head > meta[name="media-source"]
+        value: attribute(el, "content")

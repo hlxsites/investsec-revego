@@ -55,13 +55,6 @@
 
 }
 
- /* fallback font for roboto (normal - 400) */
- @font-face {
-  font-family: "roboto-normal-400-fallback";
-  size-adjust: 100%;
-  src: local("Arial");
-}
-
 @media (min-width: 900px) {
   :root {
     --heading-font-size-xxl: 60px;
