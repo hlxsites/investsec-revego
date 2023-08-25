@@ -51,9 +51,10 @@ li .inactive {
 }
 
 .our-team .members .member picture {
-    position: absolute;
+    position: relative;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
     z-index: -1;
 }
@@ -61,6 +62,10 @@ li .inactive {
 .our-team .members .member img {
     flex-shrink: 0;
     max-width: none;
+}
+
+.card.two {
+    width: 100%;
 }
 
 .card.three {
@@ -76,6 +81,14 @@ li .inactive {
 }
 
 @media (min-width: 750px) {
+    .card.two {
+        width: 50%;
+    }
+
+    .card.two img {
+        min-width: 600px;
+    }
+
     .card.three {
         width: 33.3%;
     }

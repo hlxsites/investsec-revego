@@ -5,6 +5,7 @@ export default async function decorate(block) {
   const data = await resp.json();
   const teams = {};
   const mapNumberedStyle = {
+    2: 'two',
     3: 'three',
     4: 'four',
   };
