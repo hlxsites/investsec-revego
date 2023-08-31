@@ -1,0 +1,98 @@
+.renewable-energy-projects {
+    text-align: left;
+}
+
+.projects-view {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+}
+
+.projects-view .projects-list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-view .projects-list-container li {
+    padding: 16px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--background-color-light-black);
+}
+
+.projects-view .projects-list-container li.active {
+    color: var(--background-color-green);
+}
+
+.projects-view .project {
+    display: none;
+    padding: 64px 32px;
+}
+
+.projects-view .project.active {
+    display: block;
+}
+
+.projects-view .card {
+    display: flex;
+    text-align: center;
+    min-height: 300px;
+}
+
+.projects-view .card h2 {
+    background-color: var(--background-color-light-grey);
+    margin: 0;
+    padding-top: 12%;
+    width: 30%;
+}
+
+.projects-view .card picture {
+    object-fit: cover;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
+}
+
+.projects-view .card picture img {
+    width: 650px;
+    height: 192px;
+    height: auto;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: -30px;
+}
+
+
+.projects-view .table {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1px;
+    padding: 32px 0;
+}
+
+.projects-view .table .key {
+    background-color: var(--background-color-green);
+    color: var(--text-color-white);
+    padding: 10px
+}
+
+.projects-view .table .value {
+    background-color: var(--background-color-light-grey);
+    padding: 10px;
+}
+
+@media (min-width: 900px) {
+    .projects-view {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .projects-view .projects-list-container {
+        width: 20%;
+    }
+
+    .projects-view .projects-description {
+        width: 80%;
+    }
+}
