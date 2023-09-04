@@ -11,7 +11,7 @@ const resp = await fetch('/renewable-energy-projects.json');
 const data = await resp.json();
 
 export default async function decorate(block) {
-  const section = document.querySelector('.renewable-energy-projects')
+  const section = document.querySelector('.renewable-energy-projects');
 
   const projectsFlex = document.createElement('div');
   projectsFlex.classList.add('projects-view');
@@ -63,14 +63,14 @@ export default async function decorate(block) {
 
     const descriptionListContainer = document.createElement('ul');
     const descriptionString = projectsData.description;
-    const descriptionArray = descriptionString.split("--");
-    
+    const descriptionArray = descriptionString.split('--');
+
     descriptionArray.forEach((info) => {
       const descriptionList = document.createElement('li');
       descriptionList.innerHTML = info;
       descriptionListContainer.append(descriptionList);
-    })
-     
+    });
+
     project.append(descriptionListContainer);
 
     const table = document.createElement('div');
@@ -96,13 +96,12 @@ export default async function decorate(block) {
       table.append(keyElement);
       table.append(valueElement);
     });
-  
+
     project.append(table);
 
     projectsDescription.append(project);
-  })
+  });
 
   projectsList.firstChild.classList.add('active');
   projectsDescription.firstChild.classList.add('active');
-
 }
