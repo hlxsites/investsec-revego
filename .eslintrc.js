@@ -18,7 +18,4 @@ module.exports = {
       js: 'always',
     }],
   },
-  globals: {
-    dataLayer: 'writable',
-  },
 };
