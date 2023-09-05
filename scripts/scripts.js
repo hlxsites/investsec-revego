@@ -15,7 +15,10 @@ import {
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
-window.adobeDataLayer = window.adobeDataLayer ? window.adobeDataLayer :  {}; // used by Adobe Analytics
+// used by Adobe Analytics
+window.adobeDataLayer = window.adobeDataLayer
+  ? window.adobeDataLayer
+  : {};
 
 /**
  * Builds hero block and prepends to main in a new section.
