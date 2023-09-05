@@ -15,6 +15,8 @@ import {
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+// eslint-disable-next-line
+let dataLayer = {}; // used by Adobe Analytics
 
 /**
  * Builds hero block and prepends to main in a new section.
