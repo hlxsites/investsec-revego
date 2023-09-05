@@ -14,14 +14,14 @@ loadScript('//assets.adobedtm.com/launch-ENd6668700e6ad4d64a37c3d34c489ee03.min.
 const pageDir = window.location.pathname.replace(/\//g, '');
 
 if (window.location.pathname !== '/') {
-  dataLayer = {
+  window.adobeDataLayer = {
     page: {
       articleTitle: pageDir,
       name: `fund-managers/news/${pageDir}`,
     },
   };
 } else {
-  dataLayer = {
+  window.adobeDataLayer = {
     page: {
       name: 'fund-managers/home',
     },
