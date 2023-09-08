@@ -84,6 +84,7 @@ export default async function decorate(block) {
     memberElement.classList.add('member');
 
     memberElement.append(createOptimizedPicture(member.picture, member.name, false, [{ width: '600' }]));
+    memberElement.querySelector('img').width = '600';
 
     const card = document.createElement('div');
     card.classList.add('card');

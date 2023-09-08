@@ -10,7 +10,7 @@ export default async function decorate(block) {
 
   const cards = [];
   records.data.forEach((item) => {
-    const pic = createOptimizedPicture(item['card-thumbnail'], item['card-title'], false, [{ width: '710' }]);
+    const pic = createOptimizedPicture(item['card-thumbnail'], item['card-title'], true, [{ width: '710' }]);
     pic.querySelector('img').width = '710';
     cards.push(jsx`
     <div class="slider-item">
