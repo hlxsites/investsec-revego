@@ -64,6 +64,11 @@ li .inactive {
     max-width: none;
 }
 
+.our-team .members .member .socials {
+    padding: 20px;
+    text-align: center;
+}
+
 .card.two {
     width: 100%;
 }
