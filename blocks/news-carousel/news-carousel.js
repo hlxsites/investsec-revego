@@ -12,6 +12,7 @@ export default async function decorate(block) {
   records.data.forEach((item) => {
     const pic = createOptimizedPicture(item['card-thumbnail'], item['card-title'], true, [{ width: '710' }]);
     pic.querySelector('img').width = '710';
+    pic.querySelector('img').height = '485';
     cards.push(jsx`
     <div class="slider-item">
       <div class="slider-image">
