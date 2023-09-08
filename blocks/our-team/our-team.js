@@ -127,7 +127,7 @@ export default async function decorate(block) {
       const memberLinkedIn = document.createElement('a');
       memberLinkedIn.title = 'LinkedIn';
       const span = document.createElement('span');
-      span.textContent = 'LinkedIn';
+      span.textContent = `${member.name} on LinkedIn`;
       span.classList.add('icon');
       span.classList.add('icon-linkedin');
       memberLinkedIn.href = member.linkedin;
