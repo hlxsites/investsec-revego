@@ -49,23 +49,29 @@ export default async function decorate(block) {
   const sliderItem = slider.querySelector('.slider-item');
   const isMultislide = (slider.dataset.multislide === 'true');
 
-  sliderControlPrev.addEventListener('click', () => {
-    if (isSlide) return;
-    isSlide = true;
-    const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
-    slider.scrollLeft += -slideWidth;
-    setTimeout(() => { isSlide = false; }, 700);
-  },
-  { passive: true });
+  sliderControlPrev.addEventListener(
+    'click',
+    () => {
+      if (isSlide) return;
+      isSlide = true;
+      const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+      slider.scrollLeft += -slideWidth;
+      setTimeout(() => { isSlide = false; }, 700);
+    },
+    { passive: true },
+  );
 
-  sliderControlNext.addEventListener('click', () => {
-    if (isSlide) return;
-    isSlide = true;
-    const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
-    slider.scrollLeft += slideWidth;
-    setTimeout(() => { isSlide = false; }, 700);
-  },
-  { passive: true });
+  sliderControlNext.addEventListener(
+    'click',
+    () => {
+      if (isSlide) return;
+      isSlide = true;
+      const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+      slider.scrollLeft += slideWidth;
+      setTimeout(() => { isSlide = false; }, 700);
+    },
+    { passive: true },
+  );
 
   function autoSlide() {
     if (
@@ -108,14 +114,14 @@ export default async function decorate(block) {
     autoSlide();
   }
 
-  window.addEventListener('resize', autoSlide, { passive: true});
-  slider.addEventListener('mousedown', dragStart, { passive: true});
-  slider.addEventListener('touchstart', dragStart, { passive: true});
-  slider.addEventListener('mousemove', dragging, { passive: true});
-  slider.addEventListener('touchmove', dragging, { passive: true});
-  slider.addEventListener('mouseup', dragStop, { passive: true});
-  slider.addEventListener('touchend', dragStop, { passive: true});
-  slider.addEventListener('mouseleave', dragStop, { passive: true});
+  window.addEventListener('resize', autoSlide, { passive: true });
+  slider.addEventListener('mousedown', dragStart, { passive: true });
+  slider.addEventListener('touchstart', dragStart, { passive: true });
+  slider.addEventListener('mousemove', dragging, { passive: true });
+  slider.addEventListener('touchmove', dragging, { passive: true });
+  slider.addEventListener('mouseup', dragStop, { passive: true });
+  slider.addEventListener('touchend', dragStop, { passive: true });
+  slider.addEventListener('mouseleave', dragStop, { passive: true });
 
   function autoplayStart() {
     setInterval(() => {
