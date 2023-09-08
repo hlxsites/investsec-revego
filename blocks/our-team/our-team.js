@@ -126,6 +126,7 @@ export default async function decorate(block) {
       memberSocials.classList.add('socials');
       const memberLinkedIn = document.createElement('a');
       const span = document.createElement('span');
+      span.textContent = 'LinkedIn';
       span.classList.add('icon');
       span.classList.add('icon-linkedin');
       memberLinkedIn.href = member.linkedin;
