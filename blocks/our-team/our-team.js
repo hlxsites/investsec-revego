@@ -1,4 +1,4 @@
-import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
+import { createOptimizedPicture, decorateIcons } from '../../scripts/lib-franklin.js';
 
 export default async function decorate(block) {
   const resp = await fetch('/our-team.json');
@@ -123,10 +123,19 @@ export default async function decorate(block) {
     }
 
     if (member.linkedin) {
+      const memberSocials = document.createElement('div');
+      memberSocials.classList.add('socials');
       const memberLinkedIn = document.createElement('a');
+      memberLinkedIn.title = 'LinkedIn';
+      const span = document.createElement('span');
+      span.textContent = `${member.name} on LinkedIn`;
+      span.classList.add('icon');
+      span.classList.add('icon-linkedin');
       memberLinkedIn.href = member.linkedin;
-      memberLinkedIn.textContent = 'LinkedIn';
-      memberContent.append(memberLinkedIn);
+      memberLinkedIn.append(span);
+      decorateIcons(memberLinkedIn);
+      memberSocials.append(memberLinkedIn);
+      memberContent.append(memberSocials);
     }
 
     teams[member.team].append(card);
