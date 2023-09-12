@@ -10,7 +10,9 @@ export default async function decorate(block) {
 
   const cards = [];
   records.data.forEach((item) => {
-    const pic = createOptimizedPicture(item['card-thumbnail'], item['card-title'], 'lazy', [{ width: '710' }]);
+    const pic = createOptimizedPicture(item['card-thumbnail'], item['card-title'], true, [{ width: '710' }]);
+    pic.querySelector('img').width = '710';
+    pic.querySelector('img').height = '485';
     cards.push(jsx`
     <div class="slider-item">
       <div class="slider-image">
@@ -47,21 +49,29 @@ export default async function decorate(block) {
   const sliderItem = slider.querySelector('.slider-item');
   const isMultislide = (slider.dataset.multislide === 'true');
 
-  sliderControlPrev.addEventListener('click', () => {
-    if (isSlide) return;
-    isSlide = true;
-    const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
-    slider.scrollLeft += -slideWidth;
-    setTimeout(() => { isSlide = false; }, 700);
-  });
+  sliderControlPrev.addEventListener(
+    'click',
+    () => {
+      if (isSlide) return;
+      isSlide = true;
+      const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+      slider.scrollLeft += -slideWidth;
+      setTimeout(() => { isSlide = false; }, 700);
+    },
+    { passive: true },
+  );
 
-  sliderControlNext.addEventListener('click', () => {
-    if (isSlide) return;
-    isSlide = true;
-    const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
-    slider.scrollLeft += slideWidth;
-    setTimeout(() => { isSlide = false; }, 700);
-  });
+  sliderControlNext.addEventListener(
+    'click',
+    () => {
+      if (isSlide) return;
+      isSlide = true;
+      const slideWidth = isMultislide ? slider.clientWidth : sliderItem.clientWidth;
+      slider.scrollLeft += slideWidth;
+      setTimeout(() => { isSlide = false; }, 700);
+    },
+    { passive: true },
+  );
 
   function autoSlide() {
     if (
@@ -104,14 +114,14 @@ export default async function decorate(block) {
     autoSlide();
   }
 
-  window.addEventListener('resize', autoSlide);
-  slider.addEventListener('mousedown', dragStart);
-  slider.addEventListener('touchstart', dragStart);
-  slider.addEventListener('mousemove', dragging);
-  slider.addEventListener('touchmove', dragging);
-  slider.addEventListener('mouseup', dragStop);
-  slider.addEventListener('touchend', dragStop);
-  slider.addEventListener('mouseleave', dragStop);
+  window.addEventListener('resize', autoSlide, { passive: true });
+  slider.addEventListener('mousedown', dragStart, { passive: true });
+  slider.addEventListener('touchstart', dragStart, { passive: true });
+  slider.addEventListener('mousemove', dragging, { passive: true });
+  slider.addEventListener('touchmove', dragging, { passive: true });
+  slider.addEventListener('mouseup', dragStop, { passive: true });
+  slider.addEventListener('touchend', dragStop, { passive: true });
+  slider.addEventListener('mouseleave', dragStop, { passive: true });
 
   function autoplayStart() {
     setInterval(() => {
